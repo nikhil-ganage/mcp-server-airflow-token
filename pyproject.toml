@@ -1,0 +1,69 @@
+[project]
+name = "mcp-server-airflow-token"
+version = "0.1.0"
+description = "Model Context Protocol (MCP) server for Apache Airflow with Bearer token authentication support"
+authors = [
+    { name = "Nikhil Ganage", email = "your-email@example.com" },
+    { name = "Gyeongmo Yang", email = "me@gmyang.dev" }
+]
+dependencies = [
+    "httpx>=0.24.1",
+    "click>=8.1.7",
+    "mcp>=0.1.0",
+    "apache-airflow-client>=2.7.0,<3",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["mcp", "airflow", "apache-airflow", "model-context-protocol"]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nikhil-ganage/mcp-server-airflow-token"
+Repository = "https://github.com/nikhil-ganage/mcp-server-airflow-token.git"
+"Bug Tracker" = "https://github.com/nikhil-ganage/mcp-server-airflow-token/issues"
+"Original Project" = "https://github.com/yangkyeongmo/mcp-server-apache-airflow"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mcp-server-airflow-token = "src.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.build]
+include = [
+    "src/**/*.py",
+    "README.md",
+    "LICENSE",
+]
+
+[tool.ruff]
+select = ["E", "W", "F", "B", "I"]
+line-length = 120
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+]
