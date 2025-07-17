@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/nikhil-ganage-mcp-server-airflow-token-badge.png)](https://mseep.ai/app/nikhil-ganage-mcp-server-airflow-token)
+
 # mcp-server-airflow-token
 
 A Model Context Protocol (MCP) server for Apache Airflow with Bearer token authentication support, enabling seamless integration with Astronomer Cloud and standalone Airflow instances.
